@@ -1,0 +1,1 @@
+"""Prediction image preprocessing service."""

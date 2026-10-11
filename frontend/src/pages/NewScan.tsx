@@ -1,0 +1,1 @@
+// New scan page scaffold.

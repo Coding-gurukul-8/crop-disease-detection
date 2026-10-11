@@ -1,0 +1,1 @@
+// Scan history page scaffold.
