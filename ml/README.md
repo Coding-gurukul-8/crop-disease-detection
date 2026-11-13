@@ -62,3 +62,17 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 ## Training on Google Colab instead
 
 Open `notebooks/00_colab_setup.ipynb` in Colab and edit the single `PROJECT_PATH` line at the top. Colab provides its own Python and GPU, so no venv is needed there.
+
+## Dataset download and exploration
+
+1. Create a Kaggle API token (Kaggle account -> Settings -> API -> **Create New Token**) and save it as `~/.kaggle/kaggle.json` (`chmod 600` on macOS/Linux). It is git-ignored; never commit it.
+2. With the venv active, from the project root:
+
+```bash
+python ml/dataset/download_dataset.py           # downloads + extracts into ml/dataset/raw/<class_name>/*.jpg
+python ml/dataset/download_dataset.py --force   # wipe raw/ and re-download
+```
+
+Running it again without `--force` does nothing if `raw/` already has data. On any failure it prints an actionable error, exits non-zero and leaves `raw/` untouched.
+
+3. Open `ml/notebooks/01_dataset_exploration.ipynb` (start Jupyter from inside the project folder, or open it in Colab from Drive). It prints the per-class counts table, flags empty classes, and saves `ml/evaluation/class_distribution.png`. Its path setup comes from `ml/notebooks/project_setup.py`.
