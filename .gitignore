@@ -12,12 +12,16 @@ ml/dataset/**/*
 !ml/dataset/**/
 !ml/dataset/.gitkeep
 !ml/dataset/**/.gitkeep
+!ml/dataset/download_dataset.py
 ml/models/*.keras
 ml/models/*.h5
 !ml/models/crop_disease_model.keras
 !ml/models/class_names.json
 .DS_Store
 *.log
+/plantvillage-dataset.zip
+/plantdisease.zip
+/kaggle.json
 dist/
 build/
 .vscode/
