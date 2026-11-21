@@ -21,7 +21,6 @@ ml/models/*.h5
 *.log
 /plantvillage-dataset.zip
 /plantdisease.zip
-/kaggle.json
 dist/
 build/
 .vscode/
