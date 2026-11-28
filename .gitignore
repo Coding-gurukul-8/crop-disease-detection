@@ -1,26 +1,106 @@
+
+# ==========================================
+# Python virtual environments
+# ==========================================
 venv/
 **/venv/
 .venv/
 **/.venv/
+
+# ==========================================
+# Python cache files
+# ==========================================
 __pycache__/
 *.pyc
+.pytest_cache/
+*.pyo
+
+# ==========================================
+# Node.js
+# ==========================================
 node_modules/
+
+# ==========================================
+# Environment variables and secrets
+# ==========================================
 .env
 **/.env
-ml/dataset/**/*
-!ml/dataset/**/
+.kaggle/
+**/.kaggle/
+kaggle.json
+**/kaggle.json
+
+# ==========================================
+# Dataset: ignore actual dataset images
+# ==========================================
+ml/dataset/raw/**
+ml/dataset/filtered/**
+ml/dataset/split/**
+ml/dataset/real_world_sample/**
+
+# Preserve dataset directory structure
+!ml/dataset/raw/
+!ml/dataset/filtered/
+!ml/dataset/split/
+!ml/dataset/real_world_sample/
+
+# Preserve nested directories
+!ml/dataset/raw/**/
+!ml/dataset/filtered/**/
+!ml/dataset/split/**/
+!ml/dataset/real_world_sample/**/
+
+# Preserve Git placeholder files
 !ml/dataset/.gitkeep
-!ml/dataset/**/.gitkeep
-!ml/dataset/download_dataset.py
+!ml/dataset/raw/**/.gitkeep
+!ml/dataset/filtered/**/.gitkeep
+!ml/dataset/split/**/.gitkeep
+!ml/dataset/real_world_sample/**/.gitkeep
+
+# Allow dataset Python scripts
+!ml/dataset/*.py
+
+# Allow dataset documentation
+!ml/dataset/*.md
+
+# Allow dataset statistics and reports
+!ml/dataset/*.csv
+!ml/dataset/*.json
+
+# ==========================================
+# ML model files
+# ==========================================
 ml/models/*.keras
 ml/models/*.h5
 !ml/models/crop_disease_model.keras
 !ml/models/class_names.json
-.DS_Store
-*.log
+
+# ==========================================
+# Downloaded archives
+# ==========================================
 /plantvillage-dataset.zip
 /plantdisease.zip
+*.zip
+
+# ==========================================
+# Build and distribution
+# ==========================================
 dist/
 build/
+
+# ==========================================
+# IDE and editor files
+# ==========================================
 .vscode/
 **/*.ipynb_checkpoints/
+
+# ==========================================
+# Operating system files
+# ==========================================
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Logs
+# ==========================================
+*.log
